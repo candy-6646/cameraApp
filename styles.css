@@ -1,0 +1,302 @@
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
+	background-color: #EEEEEE;
+	font-family: 'Amaranth', sans-serif;
+}
+
+.container .top-container {
+	width: 100%;
+	height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: gray;
+	color: white;
+}
+
+
+.bottom-container {
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	height: 90px;
+	width: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery:hover {
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: #B2B1B9;
+}
+
+
+
+.video-container {
+	height: 100%;
+	width: 70%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-color: #000000;
+	z-index: 1;
+}
+
+.video-container .video-output {
+	width: 100%;
+	z-index: 1;
+	transform: scale(1);
+}
+
+
+.video-container .buttons {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	display: flex;
+	width: 10rem;
+	height: 4rem;
+	transform: translate(-50%);
+	z-index: 3;
+}
+
+.buttons .btn {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#record, #capture {
+	height: 4rem;
+	width: 4rem;
+	border-radius: 50%;
+	border: 8px solid gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	color: gray;
+	cursor: pointer;
+}
+
+#record {
+	color: red;
+}
+
+.filters {
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.options {
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.filters, .options {
+	height: 15rem;
+	width: 5rem;
+	display: flex;
+	flex-direction: column;
+	z-index: 3;
+}
+.filters .filter, .options .option {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.auto-clicker, .zoom-in, .zoom-out {
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	border: 3px solid white;
+	border-radius: 50%;
+	color: white;
+	position: relative;
+	cursor: pointer;
+	background-color: grey;
+}
+
+.auto-clicker>span {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	background-color: grey;
+	display: block;
+	height: 20px;
+	width: 20px;
+	font-size: 15px;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid white;
+}
+
+
+
+.filters .filter {
+	margin: 5px;
+	background-image: url("images/nature.jpg");
+	background-size: cover;
+	background-blend-mode: color-burn;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/*canvas image*/
+
+
+.filter-div {
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#result {
+	height: auto;
+	width: auto;
+	position: absolute;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	border-radius: 6px;
+	animation: imageAnimation;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+}
+
+
+
+
+
+#click-timer {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 150px;
+	z-index: 5;
+	font-weight: 900;
+	display: inline-block;
+}
+
+
+/*Animation using CSS*/
+
+.capture-animation {
+  animation: shrinkDownUp;
+  animation-duration: 1s;
+}
+
+.record-animation {
+  animation: shrinkDownUp;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+.gallery-animation {
+	animation: galleryAnimation;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+
+
+@keyframes shrinkDownUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+@keyframes imageAnimation {
+
+	0% {
+		transform: scale(1) rotate(360deg);
+		opacity: 1;
+	}
+
+	33% {
+		transform: scale(0.1);
+		opacity: 0.7;
+	}
+
+	66% {
+		transform: translate(800px, -300px);
+		opacity: 0.0;
+	}
+
+
+	100% {
+		opacity: 0.0;
+		transform: scale(0.1);
+	}
+}
+
+
+
+@keyframes galleryAnimation {
+
+	0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5) rotate(360deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

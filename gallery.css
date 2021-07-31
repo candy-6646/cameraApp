@@ -1,0 +1,157 @@
+body {
+	margin: 0;
+	background-color: #EEEEEE;
+	overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+.modal-body > video {
+	height: 70%;
+	width: 100%;
+}
+
+.top-container {
+	width: 100%;
+	height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: gray;
+	color: white;
+	font-family: 'Amaranth', sans-serif;
+	position: relative;
+	z-index: 1;
+}
+
+.gallery-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: auto;
+	width: auto;
+}
+
+.alert {
+	position: absolute !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #F8485E;
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.alert> i {
+	margin-right: 10px;
+	font-size: 50px;
+}
+
+.gallery-card {
+	height: 16rem;
+	width: 21rem;
+	margin: 20px;
+	position: relative;
+	border: none;
+}
+
+.media-container {
+	height: 100%;
+	width: 100%;
+	border: 2px solid #7C83FD;
+	border-radius: 6px;
+	background-size: cover;
+	background-color: #7C83FD;
+	z-index: 1;
+}
+
+.media-container > img {
+	height: 100%;
+	width: 100%;
+}
+
+.media-container > video {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+
+.card-data {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	border-radius: 6px;
+	z-index: 2;
+	display: none;
+}
+
+.card-info {
+	position: absolute;
+	border-radius: 6px;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.3;
+}
+
+.media-buttons {
+	height: 3rem;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.media-buttons>button {
+	height: 2.5rem;
+	width: 2.5rem;
+	margin-right: 20px;
+	background-color: white;
+	border-radius: 50%;
+	border: 2px solid #7C83FD;
+	color: #7C83FD;
+	font-size: 15px;
+	z-index: 2;
+}
+
+.media-buttons>button:hover {
+	background-color: #7C83FD;
+	color: white;
+	border-color: white;
+	cursor: pointer;
+}
+
+
+
+.play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 50px;
+	color: white;
+	z-index: 2;
+	height: auto;
+	width: auto;
+}
+
+.play-btn:hover {
+	color: #7C83FD;
+	cursor: pointer;
+}
